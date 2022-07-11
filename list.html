@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<script src="js/jquery-2.1.0.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+	<script>
+		$(document).on("pageshow", "#home", showtable);
+		function showtable(){
+			$.ajax({
+				type: "GET",
+				url: "http://localhost/Member/api/list.php",
+				success: showdata,
+				error:function(){
+					alert("error");
+				}
+			});
+		}
+		function showdata(data){
+			$("#showtable").html(data);
+		}
+
+		function send_api_del(ID){
+				if(confirm("確定要刪除使用者#"+ID))
+					location.href = "./api/del.php?ID=" + ID;
+		}
+
+		function send_api_update(ID){
+			location.href = "./update.php?ID=" + ID;
+		}
+	</script>
+	<style>
+		#showtable, th, td{
+			border: 3px solid #000;
+		}
+		#showtable th{
+			border: 1px solid #000;
+			border-width: 0.03px;
+			background-color: #ccc;
+		}
+		#showtable td{
+			border: 1px solid #000;
+			border-width: 0.03px;
+		}
+	</style>
+</head>
+<body>
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>會員列表</h1>
+		</div>
+		<div role="main" class="ui-content">
+			<div id="showtable"></div>
+		</div>
+	</div>
+</body>
+</html>

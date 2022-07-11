@@ -1,0 +1,51 @@
+#btn_blue{
+	background-color: #296EF7;
+}
+#btn_red{
+	background-color: #F71515;
+}
+#btn_green{
+	background-color: #2AE549;
+}
+
+.ui-icon-aaa:after{background-image:url("../images/rar.png");} 
+
+#bac_black{
+	background-color: #303030;
+	color: #fff;
+}
+#bac_black1{
+	background-color: #303030;
+	color: #ffffff;
+	font-family: DFKai-sb;
+	font-size: 24px;
+}
+#aaa{
+	color: #fa0;
+	font-size: 20px;
+}
+
+.mylogo{
+
+	width: 349px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 2px 2px 2px 2px #ccc;
+	border-radius: 10px;            /*圓弧效果*/
+}
+
+.logo_imageborder{
+	border-radius: 10px;
+	
+}
+
+.product_font{
+color: #fa0;
+	font-family: DFKai-sb;
+	font-size: 24px
+}
+
+
+
