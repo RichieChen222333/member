@@ -14,7 +14,7 @@
 <h3>3.XXX</h3>
 
 <h3>某段程式碼介紹</h3>
-  ```
+  ```js
     export default {
   name: 'App',
   components: {
