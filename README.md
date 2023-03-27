@@ -14,7 +14,7 @@
 <h3>3.XXX</h3>
 
 <h3>某段程式碼介紹</h3>
-   ```js
+  ```
     export default {
   name: 'App',
   components: {
@@ -44,78 +44,5 @@
       ]
     }
   },
-  methods: {
-    addTodo() {
-      console.log("eee");
-      const timestamp = Math.floor(Date.now());
-      const value = this.newTodo;
-      this.todos.push({
-        id: timestamp,
-        title: value,
-        description: '詳細內容',
-        completed: false
-      });
-    },
-    removeTodo(todo) {
-      const vm = this;
-      var newIndex = vm.todos.find((item) => {
-        return todo.id == item.id
-      });
-      vm.todos.splice(newIndex, 1);
-    },
-    editDecription(item) {
-      this.cacheDecriptionTitle = item;
-      this.cacheDecription = item.title;
-    },
-    editTodo(item) {
-      this.cacheItem = item;
-      this.cacheTitle = item.title;
-    },
-    doneTodo(item) {
-      item.title = this.cacheTitle;
-      this.cacheTitle = '';
-      this.cacheItem = '';
-    },
-    cancelTodo() {
-      this.cacheTitle = '';
-      this.cacheItem = '';
-    },
-    destory() {
-      this.todos = [];
-    }
-  },
-  computed: {
-    filterTodo() {
-      const vm = this;
-      if (vm.visibility == 'all') {
-        return vm.todos
-      } else if (vm.visibility == 'active') {
-        const activeTodo = [];
-        vm.todos.forEach((item) => {
-          if (!item.completed) {
-            activeTodo.push(item)
-          }
-        });
-        return activeTodo;
-      } else if (vm.visibility == 'completed') {
-        const completedTodo = [];
-        vm.todos.forEach((item) => {
-          if (item.completed) {
-            completedTodo.push(item)
-          }
-        });
-        return completedTodo;
-      }
-    },
-    countActive() {
-      let active = 0;
-      this.todos.forEach((item) => {
-        if (!item.completed) {
-          active++;
-        }
-      });
-      return active;
-    }
-  }
-}
 ```
+
